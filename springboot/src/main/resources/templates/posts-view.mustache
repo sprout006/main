@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+body {
+  font:14px/1.8 Arial, Helvetica, sans-serif;
+  font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333;
+    background-color: #000000;
+}
+.frame {
+  width: 1800px;
+  margin: 0 auto;
+  border: 1px solid #aaa;
+
+}
+.header {
+  padding:40px 10px;
+  text-align: center;
+  background: #eee;
+  margin-bottom: 20px;
+}
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  background: #5457de;
+  color: #fff;
+  display: inline-block;
+  padding: 0 8px;
+}
+.container {
+  overflow: hidden;
+}
+.nav {
+  float: left;
+  width: 150px;
+  background: #333;
+  color: #fff;
+  margin-right: 50px;
+}
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+.nav-item {
+  margin: 4px 0;
+}
+.nav-link {
+  display: block;
+  text-decoration: none;
+  padding: 4px 10px;
+  color: #fff;
+}
+.nav-link2 {
+  display: block;
+  text-decoration: none;
+  padding: 4px 10px;
+  color: #5457de;
+}
+.nav-link:hover {
+  background: #5457de;
+}
+.qq1{
+  float: left;
+  width: 150px;
+  background: #333;
+  color: #fff;
+  margin-right: 50px;
+  margin: 4px 0;
+}
+.content {
+  float: left;
+  width: 1400px;
+  background: #fff;
+}
+.content2 {
+float: right;
+width: 150px;
+padding: 10px;
+background: #fff;
+}
+.footer {
+  text-align: center;
+  border-top: 1px solid #aaa;
+  margin: 20px 20px 0;
+  font-size: 12px;
+}
+
+.container {
+  background: #333;
+}
+.content {
+  background: #fff;
+}
+img.fixed{
+position: fixed;
+left:20px;
+top:50px;
+}
+.btn2{
+    width:100px;
+    background-color:black;
+    border: none;
+    color:#fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px;
+    cursor: pointer;
+}
+.btn3{
+    width:30px;
+    background-color:black;
+    border: none;
+    color:#fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px;
+    cursor: pointer;
+}
+.tbl-ex{
+         margin:100px auto 0px auto;
+}
+.tbl-ex, .tbl-ex th , .tbl-ex td{
+         border:1px solid gray;
+         border-width: 1px 0;
+         border-collapse: collapse;
+         text-align: center;
+         padding:6px;
+}
+.tbl-ex th{
+         background-color: #999;
+         font-size: 1.0em;
+         color: #fff;
+         border-width:2px 0;
+}
+.tbl-ex td{
+         border-style:dotted;
+}
+.tbl-ex tr:hover td{
+         background-color: tomato;
+         cursor : pointer;
+}
+.even{
+         background-color: highlight;
+}
+.btn2{
+    width:100px;
+    background-color:black;
+    border: none;
+    color:#fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px;
+    cursor: pointer;
+}
+select {
+
+    -webkit-appearance: none;  /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+    background: url('https://postfiles.pstatic.net/MjAyMDA1MDdfMTIz/MDAxNTg4ODU3ODE5Njcz.XzR2cUDzuxhyVDoIytLSrK0l0VldaYSaxPS91drfUx0g.ia3f1rJ66yCu0HJqMkkxzEiAgRcihNNiVJqpP19kSOIg.PNG.ctr_poker/bg_select.png?type=w580') no-repeat 95% 50%;  /* 화살표 모양의 이미지 */
+}
+
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand {
+    display: none;
+}
+select {
+
+    width: 100px; /* 원하는 너비설정 */
+    padding: .6em .5em; /* 여백으로 높이 설정 */
+    font-family: inherit;  /* 폰트 상속 */
+    background: url('https://postfiles.pstatic.net/MjAyMDA1MDdfMTIz/MDAxNTg4ODU3ODE5Njcz.XzR2cUDzuxhyVDoIytLSrK0l0VldaYSaxPS91drfUx0g.ia3f1rJ66yCu0HJqMkkxzEiAgRcihNNiVJqpP19kSOIg.PNG.ctr_poker/bg_select.png?type=w580') no-repeat 95% 50%; /* 네이티브 화살표를 커스텀 화살표로 대체 */
+    border: 1px solid #999;
+    border-radius: 0px; /* iOS 둥근모서리 제거 */
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+}
+select {
+
+    width: 100px; /* 원하는 너비설정 */
+    padding: .6em .5em; /* 여백으로 높이 설정 */
+    font-family: inherit;  /* 폰트 상속 */
+    background: url('https://postfiles.pstatic.net/MjAyMDA1MDdfMTIz/MDAxNTg4ODU3ODE5Njcz.XzR2cUDzuxhyVDoIytLSrK0l0VldaYSaxPS91drfUx0g.ia3f1rJ66yCu0HJqMkkxzEiAgRcihNNiVJqpP19kSOIg.PNG.ctr_poker/bg_select.png?type=w580') no-repeat 95% 50%; /* 네이티브 화살표를 커스텀 화살표로 대체 */
+    border: 1px solid #999;
+    border-radius: 0px; /* iOS 둥근모서리 제거 */
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+
+</style>
+<script>
+var new_popup = window.open('/client/save', 'width=300px; height=300px;');
+new_popup.close();
+function hamsu()
+{
+    alert("게시글 작성 완료")
+
+}
+</script>
+
+<body>
+<div class="frame">
+    <div class="header">
+        <div class="logo"><a href="/" style="text-decoration:none; color:black;">내로남불 심리분석기</a></div>
+    </div>
+    <!-- //header -->
+    <div class="container">
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="/counselor/index" class="nav-link">상담자 등록</a></li>
+                <li class="nav-item"><a href="/client/index" class="nav-link">내담자 등록</a></li>
+                <li class="nav-item"><a href="/posts/index" class="nav-link2">상담기록 게시판</a></li>
+            </ul>
+        </div>
+        <!-- //nav -->
+        <div class="content">
+            <div class="content-in" style="border:1px dashed black; margin: 40px;">
+                <div style="float:right;">
+                    <input type="button" class="btn2"  id="list" value="상담 이미지 목록">
+                    <script>
+                var img = '{{post.images}}';
+                //var str = JSON.stringify(img.split(','));
+                var str = img;
+                $('#list').on('click',function(){
+                    //window.location.href = '/view/images/last/'+str;
+                    window.open('/view/images/last/'+str,"new_window",'width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes')
+                })
+                </script>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="title"  ><strong><font size ="4">글 번호</strong></label>
+                        <input type="text" class="form-control" id="id" value="{{post.id}}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="author"  ><strong> <font size ="4">상담자</strong> </label>
+                        <input type="text"  class="form-control" id="author" value="{{post.author}}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="author" ><strong> <font size ="4">내담자 </strong> </label>
+                        <input type="text" class="form-control" id="client" value="{{post.client}}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="title" ><strong><font size ="4">상담일</strong></label>
+                        <input type="text" class="form-control" id="title" value="{{post.title}}" readonly>
+                    </div>
+                </form>
+                <form>
+                    <label for="content0"> <strong><font size ="4">상담내용</strong> </label>
+                    <div class="form-group">
+                        <textarea class="form-control" style="width:50%; color:black;margin:0px 20px 10px;overflow:visible; text-overflow:ellipsis" rows=30 id="content" readonly>{{post.content}}</textarea>
+                    </div>
+
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--index.js 추가-->
+    <script src="/js/app/index.js"></script>
+</body>
+<!-- //container -->
+<div class="footer">
+    <p class="copyright" style="color:white">&copy;copyright 2020 INU university NeroNambul all rights reserved</p>
+</div>
+<!-- //footer -->
+</div>
+</html>

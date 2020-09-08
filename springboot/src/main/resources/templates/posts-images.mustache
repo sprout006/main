@@ -1,0 +1,21 @@
+
+<script>
+                    var check =1;
+</script>
+
+<div id="TT" style="border:1px dashed black;margin:auto;text-align:center;vertical-align:top;">
+    <strong><h1 >&#128248; 이미지 출력 &#128248;</h1></strong>
+    <div id="test" >
+        {{#images}}
+        <tr>
+            <p>
+            <td ><script>
+                document.write("<font size=4>"+(check++)+"번째 이미지"+"</font>");
+            </script></td>
+            <td><img id="img" width="150px" height="150px" src="https://capstone-naeronambul.s3.ap-northeast-2.amazonaws.com/image/{{.}}" style="text-align:center;" /></td>
+            </p>
+        {{/images}}
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

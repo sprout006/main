@@ -1,0 +1,205 @@
+
+<style>
+body {
+  font:14px/1.8 Arial, Helvetica, sans-serif;
+  font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333;
+    background-color: #000000;
+}
+.frame {
+  width: 800px;
+  margin: 0 auto;
+  border: 1px solid #aaa;
+
+}
+.header {
+  padding:40px 10px;
+  text-align: center;
+  background: #eee;
+  margin-bottom: 20px;
+}
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  background: #5457de;
+  color: #fff;
+  display: inline-block;
+  padding: 0 8px;
+}
+.container {
+  overflow: hidden;
+}
+.nav {
+  float: left;
+  width: 150px;
+  background: #333;
+  color: #fff;
+  margin-right: 50px;
+}
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+.nav-item {
+  margin: 4px 0;
+}
+.nav-link {
+  display: block;
+  text-decoration: none;
+  padding: 4px 10px;
+  color: #fff;
+}
+.nav-link2 {
+  display: block;
+  text-decoration: none;
+  padding: 4px 10px;
+  color: #5457de;
+}
+.nav-link:hover {
+  background: #5457de;
+}
+.qq1{
+  float: left;
+  width: 150px;
+  background: #333;
+  color: #fff;
+  margin-right: 50px;
+  margin: 4px 0;
+}
+.content {
+  float: left;
+  width: 600px;
+  background: #fff;
+}
+.content2 {
+float: right;
+width: 150px;
+padding: 10px;
+background: #fff;
+}
+.footer {
+  text-align: center;
+  border-top: 1px solid #aaa;
+  margin: 20px 20px 0;
+  font-size: 12px;
+}
+
+.container {
+  background: #333;
+}
+.content {
+  background: #fff;
+}
+img.fixed{
+position: fixed;
+left:20px;
+top:50px;
+}
+.btn2{
+    width:100px;
+    background-color:black;
+    border: none;
+    color:#fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px;
+    cursor: pointer;
+}
+.btn3{
+    width:30px;
+    background-color:black;
+    border: none;
+    color:#fff;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px;
+    cursor: pointer;
+}
+.tbl-ex{
+         margin:100px auto 0px auto;
+}
+.tbl-ex, .tbl-ex th , .tbl-ex td{
+         border:1px solid gray;
+         border-width: 1px 0;
+         border-collapse: collapse;
+         text-align: center;
+         padding:6px;
+}
+.tbl-ex th{
+         background-color: #999;
+         font-size: 1.0em;
+         color: #fff;
+         border-width:2px 0;
+}
+.tbl-ex td{
+         border-style:dotted;
+}
+.tbl-ex tr:hover td{
+         background-color: tomato;
+         cursor : pointer;
+}
+.even{
+         background-color: highlight;
+}
+</style>
+<script>
+var new_popup = window.open('/client/save', 'width=300px; height=300px;');
+new_popup.close();
+</script>
+<body>
+ <div class="frame">
+  <div class="header">
+    <div class="logo"><a href="/" style="text-decoration:none; color:black;">내로남불 심리분석기</a></div>
+  </div>
+  <!-- //header -->
+  <div class="container">
+    <div class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="/counselor/index" class="nav-link">상담자 등록</a></li>
+        <li class="nav-item"><a href="/client/index" class="nav-link">내담자 등록</a></li>
+        <li class="nav-item"><a href="/posts/index" class="nav-link2">상담기록 게시판</a></li>
+      </ul>
+    </div>
+    <!-- //nav -->
+    <div class="content">
+     <table class="tbl-ex" >
+            <thead class="even" >
+            <th  >게시글번호</th>
+            <th  >상담자</th>
+            <th  >내담자</th>
+            <th  >상담일자</th>
+            <th  >최종수정일</th>
+            <th  >비고</th>
+            </thead>
+            <tbody classs="even" id="tbody">
+            {{#posts}}
+                <tr>
+                    <td ><a href="/posts/view/{{id}}" style="text-decoration:none; color:black;"><strong>{{id}}</strong></a></td>
+                    <td >{{author}}</td>
+                    <td >{{client}}</td>
+                    <td >{{title}}</td>
+                    <td >{{modifiedDate}}</td>
+                    <td ><input type="button" class="btn3" target="_blank" value="수정" onClick="location.href='/posts/update/{{id}}'"/></td>
+                </tr>
+            {{/posts}}
+            <a href="/posts/save" role="button" class="btn2" target="_blank" style="float:right;">게시글 등록</a>
+            </tbody>
+        </table>
+    </div>
+  </div>
+  </body>
+  <!-- //container -->
+  <div class="footer">
+    <p class="copyright" style="color:white">&copy;copyright 2020 INU university NeroNambul all rights reserved</p>
+  </div>
+  <!-- //footer -->
+</div>
+
+
+

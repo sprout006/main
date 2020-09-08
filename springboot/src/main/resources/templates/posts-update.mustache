@@ -1,0 +1,104 @@
+{{>layout/header}}
+<style>
+body {
+  font:14px/1.8 Arial, Helvetica, sans-serif;
+    background-color: #000000;
+}
+</style>
+<script>
+var new_popup = window.open('test.html', 'width=300px; height=300px;');
+new_popup.close();
+
+function hamsu()
+{
+    alert("게시글 수정 완료")
+
+}
+
+function hamsu2()
+{
+    alert("게시글 삭제 완료")
+
+}
+
+	function check_onclick(){
+		theForm=document.frm1;
+
+		if(theForm.input1.value=="" || theForm.input2.value=="" || theForm.input3.value=="" ){
+			alert("필수 입력란이 비었습니다. 확인해 주세요.");
+		}
+		else{
+			alert("필수 입력란을 모두 입력하셨습니다.");
+		}
+	}
+
+
+function realtimeClock() {
+  document.rtcForm.rtcInput.value = getTimeStamp();
+  setTimeout("realtimeClock()", 1000);
+}
+
+
+function getTimeStamp() { // 24시간제
+  var d = new Date();
+
+  var s =
+    leadingZeros(d.getFullYear(), 4) + '-' +
+    leadingZeros(d.getMonth() + 1, 2) + '-' +
+    leadingZeros(d.getDate(), 2) + ' ' +
+
+    leadingZeros(d.getHours(), 2) + ':' +
+    leadingZeros(d.getMinutes(), 2) + ':' +
+    leadingZeros(d.getSeconds(), 2);
+
+  return s;
+}
+
+
+function leadingZeros(n, digits) {
+  var zero = '';
+  n = n.toString();
+
+  if (n.length < digits) {
+    for (i = 0; i < digits - n.length; i++)
+      zero += '0';
+  }
+  return zero + n;
+}
+
+</script>
+
+<body>
+<h1 style="color:white">게시글 수정</h1>
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="title" style="color:white">글 번호</label>
+             <input type="text"  class="form-control" id="id" value="{{post.id}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="author" style="color:white"> 상담자(작성자) </label>
+                <input type="text"  class="form-control" id="author" value="{{post.author}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="author" style="color:white"> 내담자 </label>
+                <input type="text" class="form-control" id="client" value="{{post.client}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="title" style="color:white">상담일</label>
+                <input type="text"  class="form-control" id="title" value="{{post.title}}">
+            </div>
+            <div class="form-group">
+                <label for="content" style="color:white"> 상담내용 </label>
+                <textarea class="form-control"   id="content" >{{post.content}}</textarea>
+            </div>
+        </form>
+        <a href="/posts/index"  style="color:white" role="button" onclick="window.close();" class="btn btn-secondary">취소</a>
+        <button type="button" style="color:white" class="btn btn-primary" onclick="window.close();hamsu();" id="posts-btn-update">수정 완료</button>
+        <button type="button"  style="color:white" class="btn btn-danger" onclick="window.close();hamsu2();" id="posts-btn-delete">삭제</button>
+    </div>
+</div>
+</body>
+{{>layout/footer}}
